@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
+
+
+@mixin media-md {
+	@media screen and (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin media-lg {
+	@media screen and (min-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin media-xl {
+	@media screen and (min-width: 1600px) {
+		@content;
+	}
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html > body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: auto;
+  overflow-x: hidden;
+  font-family: 'Lato', sans-serif;
+  background-color: #F7F7F7;
+}
+
+nav {
+  width: 100vw;
+  height: auto;
+  z-index: 1;  
+  position: fixed;
+  top: 0;
+  padding: 10px 0;
+  background-color: #F7F7F7;
+  text-align: center;
+
+  h1 {
+    margin: 0;
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+    color: #171A1A;
+    text-shadow: 4px 4px 10px rgba(0, 255, 178, 0.6);
+  }
+}
+
+main {
+  height: auto;
+  width: 80vw;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 4px 4px 10px rgba(0, 255, 178, 0.6);
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+
+  &-image {
+    padding: 20px;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+
+  &_info {
+    padding: 10px;
+  }
+
+  &_info-header {    
+    display: flex;
+    justify-content: center;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  &-favourite {
+    width: 2rem;
+    cursor: pointer;
+  }
+
+  &_info-name {
+    margin-block: 13px;
+    color: rgba(209,8,29, 0.8);
+    text-shadow: 1px 1px 2px rgba(23, 26, 26, 0.6);
+    display: flex;
+    font-style: italic;
+    letter-spacing: 0.1rem;
+
+    h2 {
+      padding-left: 10px;
+    }
+  }
+
+  &_info-contact {
+    font-size: 0.75rem;
+    color: #171A1A;
+    margin-block: 7px;
+    text-align: center;
+  }
+}
+
+footer {
+  width: 100vw;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #F7F7F7;
+
+  .social-icons {
+    font-size: 1.5em;
+    color: #171A1A;
+    transition-duration: 0.5s;
+
+    &:hover {
+      color: #12F9B4;
+      transform: scale(1.2);
+      transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+    }
+  }
+}
+
+@include media-md {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include media-lg {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@include media-xl {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
